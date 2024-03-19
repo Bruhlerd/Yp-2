@@ -1,0 +1,42 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="500"
+        x:Class="Yp_2.Note"
+        Height="500"
+        Width="700"
+        Icon="C:\Users\clerk\OneDrive\Рабочий стол\Image/service_logo.ico"
+        Background="DimGray"
+        WindowStartupLocation="CenterScreen"
+        Title="Запись клиента">
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <TextBox Name="ID" x:CompileBindings="False" Text="{Binding ID}" IsVisible="False" Width="0" Height="0" IsReadOnly="True"></TextBox>
+        </StackPanel>
+        <UniformGrid Columns="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Name="Start" Margin = "0 10 0 0" FontSize = "20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center">Номер записи</TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin = "0 25 0 0">Номер клиента: </TextBlock>
+                <TextBox Name="client_id" x:CompileBindings="False" Text="{Binding client_id}" Width="250" Height="5" Margin = "85 0 0 20" Watermark="Номер клиента"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin = "0 25 0 0">Номер сотрудника: </TextBlock>
+                <TextBox Name="employee_id" x:CompileBindings="False" Text="{Binding employee_id}" Width="250" Height="5" Margin = "37 0 0 20" Watermark="Номер сотрудника"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin = "0 25 0 0">Номер услуги: </TextBlock>
+                <TextBox Name="service_id" x:CompileBindings="False" Text="{Binding service_id}" Width="250" Height="5" Margin = "37 0 0 20" Watermark="Номер услуги"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Margin = "0 25 0 0">Дата приема: </TextBlock>
+                <TextBox Name="date" x:CompileBindings="False" Text="{Binding date}" Width="250" Height="5" Margin = "37 0 0 20" Watermark="Дата записи"></TextBox>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+                <Button Name="Save" Content="Сохранить" Margin = "0 30 0 20" Click="Save_OnClick"></Button>
+                <Button Name="Back" Content="Назад" Click="GoBack"  Margin = "305 30 0 20"></Button>
+            </StackPanel>
+        </UniformGrid>
+    </Grid>
+</Window>
